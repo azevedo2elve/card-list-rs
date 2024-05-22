@@ -64,3 +64,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Observações do Gabriel
+
+Estou fazendo essa aplicação para ajudar a fazer cards conforme a demanda dos grupos de apoio do RS.
+
+Para usar o google api, precisa do credentials.json na pasta storage
