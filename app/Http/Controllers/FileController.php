@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Google\Client as GoogleClient;
 use Google\Service\Sheets as GoogleSheets;
 
@@ -25,6 +26,15 @@ class FileController extends Controller
         $this->googleSheetService = new GoogleSheets($this->client);
     }
 
+    public function index():View
+    {
+        $sheets = $this->readGoogleSheet();
+
+        //dd($sheets);
+
+        return view('index', compact('sheets'));
+    }
+
     public function readGoogleSheet()
     {
         $dimensions = $this->getDimensions($this->spreadSheetId);
@@ -34,7 +44,6 @@ class FileController extends Controller
             ->spreadsheets_values
             ->batchGet($this->spreadSheetId, ['ranges' => $range]);
 
-            dd($data->getValueRanges()[0]->values);
         return $data->getValueRanges()[0]->values;
     }
 
