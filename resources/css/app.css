@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#cardRS {
+    background-image: url('img/sos.png');
+    background-repeat: no-repeat;
+}
